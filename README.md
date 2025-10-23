@@ -129,7 +129,6 @@
 │ └── EU.pdf
 │
 ├── reports/ # 자동 생성된 리포트 결과
-│ └── pdf/ # PDF 형태의 출력물
 │ ├── ethics_report_Babylon_Health_medical_20251023.pdf
 │ └── ethics_report_Vara_medical_20251023_vol1.pdf
 │
@@ -139,7 +138,6 @@
 │
 ├── ethics_pipeline_graph.py # 전체 LangGraph 파이프라인 구조 정의
 ├── state_schema.py # LangGraph State 정의 (신뢰성·출처 추적 포함)
-├── .env # API 키 및 환경 변수
 ├── README.md # 프로젝트 개요 및 실행 가이드
 └── requirements.txt # 의존 패키지 목록
 ```
