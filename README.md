@@ -57,7 +57,7 @@
 | **Ethics Evaluator Agent** | `ethics_evaluator.py` | 수집된 정보와 평가지표를 결합하여 **윤리적 리스크 점수**를 산출하고, 기준 조항을 명시합니다. |
 | **Report Generator** | `report_generator.py` | 평가 결과와 근거를 통합해 **Markdown/PDF 보고서**를 자동 생성합니다. |
 
-## 🧩 State Schema (요약 버전)
+## 🧩 State Schema 
 
 | Key | Description |
 |------|--------------|
