@@ -110,10 +110,11 @@
 ---
 
 ### 아키텍처
+RiskJudgeAgent/
 ├── agents/ # 핵심 에이전트 모듈
 │ ├── web_collection.py # 웹 전반의 정보 수집 에이전트
 │ ├── specialized_collection.py # 학술/규제 중심 정보 수집 에이전트
-│ ├── ethics_criteria_generator.py # 도메인 기반 평가지표 생성 에이전트
+│ ├── ethics_criteria_generator.py# 도메인 기반 평가지표 생성 에이전트
 │ ├── ethics_evaluator.py # 윤리적 판단 및 점수 산출 에이전트
 │ └── report_generator.py # 결과 종합 및 보고서 생성 에이전트
 │
@@ -124,9 +125,9 @@
 │ └── EU.pdf
 │
 ├── reports/ # 자동 생성된 리포트 결과
-│ ├── pdf/ # PDF 형태의 출력물
-│ │ ├── ethics_report_Babylon Health_medical_20251023.pdf
-│ │ └── ethics_report_Vara_medical_20251023_vol1.pdf
+│ └── pdf/ # PDF 형태의 출력물
+│ ├── ethics_report_Babylon_Health_medical_20251023.pdf
+│ └── ethics_report_Vara_medical_20251023_vol1.pdf
 │
 ├── notebooks/
 │ ├── embedding.ipynb # 임베딩 및 RAG 검증 실험
