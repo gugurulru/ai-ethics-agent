@@ -1,8 +1,8 @@
 # 🧭 AI Ethics Agent
 
-> **AI 서비스의 윤리적 리스크를 자동 진단**하고, **EU AI Act (2024)** 및 **ALTAI** 기준에 따라 **근거 기반(grounded) 개선 권고안**을 생성하는 에이전트.
+> **AI 서비스의 윤리적 리스크를 자동 진단**하고, **EU AI Act (2024)** 및 **ALTAI** 기준에 따라 **근거 기반(grounded) 개선 권고안**을 생성하는 에이전트
 
-[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](#) [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](#)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](#)
 
 ---
 
