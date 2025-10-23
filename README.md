@@ -13,29 +13,29 @@
 - 조항/근거 **출처가 명시된 개선 권고안 자동 생성**
 - **우선순위/난이도/영향도** 기반의 구현 로드맵 제안
 
-을 목표로 합니다.
+을 목표로 한다.
 
-> EU는 **2024년 8월 AI Act를 발효**, **2025년 2월부터 단계적 규제를 시행**하고 있습니다. 이에 따라 기업의 **신뢰성·투명성·책임성** 입증 요구가 급증하고 있으나, 많은 조직이 **평가 기준과 필수 증적(문서) 체계**를 명확히 파악하지 못하고 있습니다. 본 프로젝트는 이 **정보 비대칭**을 해소하는 도구입니다.
+> EU는 **2024년 8월 AI Act를 발효**, **2025년 2월부터 단계적 규제를 시행**하고 있습니다. 이에 따라 기업의 **신뢰성·투명성·책임성** 입증 요구가 급증하고 있으나, 많은 조직이 **평가 기준과 필수 증적(문서) 체계**를 명확히 파악하지 못하고 있다. 본 프로젝트는 이 **정보 비대칭**을 해소하는 도구이다.
 
 ---
 
 ## 🧩 Key Features
 
 - **1️⃣ Domain-Adaptive Evaluation Metrics**  
-  도메인(예: 의료·제조·금융 등)에 따라 **고위험 기준과 평가지표 산술식이 다르게 반영**될 것으로 예상됩니다.  
-  서비스 도메인을 기반으로 임베딩된 RAG 문서에서 **가장 유사한 10개 조항을 정밀 검색**하고 보고서에는 **참고한 문서·페이지·조항 번호**가 명시됩니다.
+  도메인(예: 의료·제조·금융 등)에 따라 **고위험 기준과 평가지표 산술식이 다르게 반영**될 것으로 예상된다.  
+  서비스 도메인을 기반으로 임베딩된 RAG 문서에서 **가장 유사한 10개 조항을 정밀 검색**하고 보고서에는 **참고한 문서·페이지·조항 번호**가 명시된다.
 
 - **2️⃣ AI Data ↔ Ethical Metric Auto-Mapping**  
   기업이 보유한 AI 서비스 데이터가 **어떤 윤리 지표와 일대일 대응되는지 불명확**한 문제를,  
-  에이전트가 **간접 추론 기반 매핑**을 수행하여 서비스의 **윤리적 점수(ethical score)** 를 산출합니다.
+  에이전트가 **간접 추론 기반 매핑**을 수행하여 서비스의 **윤리적 점수(ethical score)** 를 산출한다.
 
 - **3️⃣ Self-Healing Evaluation Loop (LangGraph)**  
-  평가 자료가 부족하거나 신뢰도가 낮을 경우 **LangGraph 기반 루프 구조**로 자동 재수집-재평가를 수행합니다.  
-  단, **무한 루프 방지를 위한 예외 제어 로직**이 내장되어 있습니다.
+  평가 자료가 부족하거나 신뢰도가 낮을 경우 **LangGraph 기반 루프 구조**로 자동 재수집-재평가를 수행한다.  
+  단, **무한 루프 방지를 위한 예외 제어 로직**이 내장되어 있다.
 
 - **4️⃣ Experimental Validation & Generalization**  
-  실험적으로 **의료 도메인 사례(Vara vs Babylon Health)** 를 비교하여 실제 윤리 준수도 평가의 효용성을 검증합니다.
-  추가로 다른 도메인(헬스케어, GPT )에 적용해 **에이전트의 강건성·일반화 성능**을 검증합니다.
+  실험적으로 **의료 도메인 사례(Vara vs Babylon Health)** 를 비교하여 실제 윤리 준수도 평가의 효용성을 검증한다.
+  추가로 다른 도메인(헬스케어, GPT )에 적용해 **에이전트의 강건성·일반화 성능**을 검증한다.
 
 ---
 ## 🧰 Tech Stack
@@ -53,11 +53,11 @@
 
 | Agent | File | Description |
 |--------|------|-------------|
-| **Web Collection Agent** | `web_collection.py` | Tavily API를 이용해 웹 전반의 기본 정보를 수집하고, 출처·날짜·신뢰도를 분류합니다. |
-| **Specialized Collection Agent** | `specialized_collection.py` | 학술 논문, 리포트, 공공 문서 등 **전문 자료**만 정밀 수집하는 특화 에이전트입니다. |
-| **Ethics Criteria Generator** | `ethics_criteria_generator.py` | 임베딩된 규제 문서(RAG 기반)를 참조해 **도메인별 평가지표 세트**를 생성합니다. |
-| **Ethics Evaluator Agent** | `ethics_evaluator.py` | 수집된 정보와 평가지표를 결합하여 **윤리적 리스크 점수**를 산출하고, 기준 조항을 명시합니다. |
-| **Report Generator** | `report_generator.py` | 평가 결과와 근거를 통합해 **Markdown/PDF 보고서**를 자동 생성합니다. |
+| **Web Collection Agent** | `web_collection.py` | Tavily API를 이용해 웹 전반의 기본 정보를 수집하고, 출처·날짜·신뢰도를 분류 |
+| **Specialized Collection Agent** | `specialized_collection.py` | 학술 논문, 리포트, 공공 문서 등 **전문 자료**만 정밀 수집하는 특화 에이전트 |
+| **Ethics Criteria Generator** | `ethics_criteria_generator.py` | 임베딩된 규제 문서(RAG 기반)를 참조해 **도메인별 평가지표 세트**를 생성 |
+| **Ethics Evaluator Agent** | `ethics_evaluator.py` | 수집된 정보와 평가지표를 결합하여 **윤리적 리스크 점수**를 산출하고, 기준 조항을 명시 |
+| **Report Generator** | `report_generator.py` | 평가 결과와 근거를 통합해 **Markdown/PDF 보고서**를 자동 생성 |
 
 ---
 
