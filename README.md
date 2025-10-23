@@ -35,7 +35,7 @@
 
 - **4️⃣ Experimental Validation & Generalization**  
   실험적으로 **의료 도메인 사례(Vara vs Babylon Health)** 를 비교하여 실제 윤리 준수도 평가의 효용성을 검증한다.
-  추가로 다른 도메인(헬스케어, GPT )에 적용해 **에이전트의 강건성·일반화 성능**을 검증한다.
+  추가로 다른 도메인(생성형AI-OpenAI)에 적용해 **에이전트의 강건성·일반화 성능**을 검증한다.
 
 ---
 ## 🧰 Tech Stack
