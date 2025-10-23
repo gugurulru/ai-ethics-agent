@@ -110,8 +110,8 @@
 ---
 
 ### 🧾 프로젝트 아키텍처
-<div align="center" style="zoom:0.8;"
 ```mermaid
+<div align="center" style="zoom:0.8;"
 graph TD
     START([START]) --> WEB[🌐 Agent: Web Collection<br/>웹 정보 수집]
     
