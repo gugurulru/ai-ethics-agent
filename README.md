@@ -110,24 +110,20 @@
 ---
 
 ### 🧾 프로젝트 아키텍처
+<div align="center" style="zoom:0.8;">
+
 ```mermaid
-<div align="center" style="zoom:0.8;"
+%%{init: {'themeVariables': {'fontSize': '12px'}}}%%
 graph TD
     START([START]) --> WEB[🌐 Agent: Web Collection<br/>웹 정보 수집]
-    
     WEB --> SPEC[🎓 Agent: Specialized Collection<br/>전문 자료 수집]
-    
     SPEC --> CRIT[📋 Agent: Criteria Generation<br/>평가 기준 생성<br/>5개 카테고리 × N개 기준]
-    
     CRIT --> EVAL[⚖️ Agent: Ethics Evaluation<br/>윤리 평가 수행<br/>근거 수집 및 점수 산정]
-    
     EVAL --> CHECK{🔍 Check Recollection<br/>데이터 충분?}
-    
     CHECK -->|재수집 필요<br/>retry < 2| WEB
     CHECK -->|데이터 충분<br/>또는 retry ≥ 2| REPORT[📄 Agent: Report Generation<br/>PDF 보고서 생성<br/>15~25페이지]
-    
     REPORT --> END([END])
-    
+
     style START fill:#e1f5e1
     style END fill:#ffe1e1
     style WEB fill:#e3f2fd
