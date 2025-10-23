@@ -110,7 +110,7 @@
 ---
 
 ### 🧾 프로젝트 아키텍처
-<div align="center" style="zoom:0.6;">
+<div align="center" style="zoom:0.4;">
 
 ```mermaid
 %%{init: {'themeVariables': {'fontSize': '12px'}}}%%
