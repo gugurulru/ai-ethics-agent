@@ -69,8 +69,6 @@
 | **company_name / domain** | 평가 대상 기업명과 산업 도메인 |
 | **current_stage** | 현재 파이프라인 단계 (init / collection / evaluation / report 등) |
 
----
-
 ### 📥 데이터 수집 단계
 | Key | Description |
 |------|-------------|
@@ -80,16 +78,12 @@
 | **quality_score** | 수집 데이터의 다양성·신뢰성·최신성 평가 점수 |
 | **is_data_sufficient** | 수집 데이터가 평가에 충분한지 여부 |
 
----
-
 ### 🔍 분석 단계
 | Key | Description |
 |------|-------------|
 | **analysis_result** | 기업의 기술, 서비스 구조, 주요 리스크 등의 분석 결과 |
 | **analysis_score** | 분석 근거의 신뢰도, 교차검증 수준 등 점수화된 지표 |
 | **is_analysis_sufficient** | 분석 정보가 충분한지 여부 |
-
----
 
 ### ⚖️ 윤리 평가 단계
 | Key | Description |
@@ -99,16 +93,12 @@
 | **ethics_score** | 윤리 평가 총점 및 항목별 세부 점수 |
 | **critical_issues** | 주요 윤리 리스크 및 개선 권고사항 목록 |
 
----
-
 ### 🧾 보고서 생성 단계
 | Key | Description |
 |------|-------------|
 | **final_scores** | 데이터 품질, 분석 신뢰도, 윤리 점수를 종합한 최종 점수 |
 | **report_content** | 요약, 근거, 권고안 등을 포함한 보고서 내용 |
 | **report_path** | 생성된 보고서 파일 경로 (Markdown / PDF) |
-
----
 
 ### ⚙️ 시스템 관리 정보
 | Key | Description |
