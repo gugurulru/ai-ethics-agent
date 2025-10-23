@@ -135,7 +135,6 @@ graph TD
     style EVAL fill:#fce4ec
     style CHECK fill:#fff9c4
     style REPORT fill:#e0f2f1
-<img width="268" height="722" alt="image" src="https://github.com/user-attachments/assets/66cfc3ad-8449-4e7c-be18-62006e33c7e0" />
 
 ---
 ### 📂 Directory Structure
