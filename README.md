@@ -21,16 +21,21 @@
 
 ## 🧩 Key Features
 
-- **Grounded Risk Assessment**  
-  입력(서비스 설명/모델 카드/데이터 시트)을 바탕으로 **EU AI Act / ALTAI 매핑** 및 리스크 레벨 산정.
+- **1️⃣ Domain-Adaptive Evaluation Metrics**  
+  도메인(예: 의료·제조·금융 등)에 따라 **고위험 기준과 평가지표 산술식이 다르게 반영**됩니다.  
+  서비스 도메인을 기반으로 임베딩된 RAG 문서에서 **가장 유사한 10개 조항을 정밀 검색**하고,  
+  보고서에는 **참고한 문서·페이지·조항 번호**가 명시됩니다.
 
-- **Evidence-Linked Recommendations**  
-  각 리스크에 대해 **관련 조항(근거)**, 요구 증적(문서/로그/프로세스), **개선 가이드** 자동 제시.
+- **2️⃣ AI Data ↔ Ethical Metric Auto-Mapping**  
+  기업이 보유한 AI 서비스 데이터가 **어떤 윤리 지표와 일대일 대응되는지 불명확**한 문제를,  
+  에이전트가 **간접 추론 기반 매핑**을 수행하여 서비스의 **윤리적 점수(ethical score)** 를 산출합니다.
 
-- **Hybrid Retrieval (RAG)**  
-  법령/가이드/사례 문헌을 **BM25 + Dense** 혼합 검색으로 정밀 인용.
+- **3️⃣ Self-Healing Evaluation Loop (LangGraph)**  
+  평가 자료가 부족하거나 신뢰도가 낮을 경우,  
+  **LangGraph 기반 루프 구조**로 자동 재수집-재평가를 수행합니다.  
+  단, **무한 루프 방지를 위한 예외 제어 로직**이 내장되어 있습니다.
 
-- **Actionable Output**  
-  JSON(구조화 산출), Markdown/PDF(리포트) 동시 생성. 대시보드 연동 용이.
-
----
+- **4️⃣ Experimental Validation & Generalization**  
+  실험적으로 **의료 도메인 사례(VARa vs Babylon Health)** 를 비교하여  
+  실제 윤리 준수도 평가의 효용성을 검증하고,  
+  다른 도메인(예: GPT-계열 모델)에 적용해 **에이전트의 강건성·일반화 성능**을 검증합니다.
