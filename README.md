@@ -109,32 +109,33 @@
 
 ---
 
-### 아키텍처
+### 프로젝트 아키텍처
+
 RiskJudgeAgent/
-├── agents/ # 핵심 에이전트 모듈
-│ ├── web_collection.py # 웹 전반의 정보 수집 에이전트
-│ ├── specialized_collection.py # 학술/규제 중심 정보 수집 에이전트
-│ ├── ethics_criteria_generator.py# 도메인 기반 평가지표 생성 에이전트
-│ ├── ethics_evaluator.py # 윤리적 판단 및 점수 산출 에이전트
-│ └── report_generator.py # 결과 종합 및 보고서 생성 에이전트
+├── agents/                             # 핵심 에이전트 모듈
+│   ├── web_collection.py               # 웹 전반의 정보 수집 에이전트
+│   ├── specialized_collection.py       # 학술/규제 중심 정보 수집 에이전트
+│   ├── ethics_criteria_generator.py    # 도메인 기반 평가지표 생성 에이전트
+│   ├── ethics_evaluator.py             # 윤리적 판단 및 점수 산출 에이전트
+│   └── report_generator.py             # 결과 종합 및 보고서 생성 에이전트
 │
-├── chroma/ # RAG용 임베딩 및 검색 인덱스
-│ └── ethics/ # EU AI Act 및 ALTAI 관련 벡터 데이터
+├── chroma/                             # RAG용 임베딩 및 검색 인덱스
+│   └── ethics/                         # EU AI Act 및 ALTAI 관련 벡터 데이터
 │
-├── data/ # 법령 문서
-│ └── EU.pdf
+├── data/                               # 법령 문서
+│   └── EU.pdf
 │
-├── reports/ # 자동 생성된 리포트 결과
-│ └── pdf/ # PDF 형태의 출력물
-│ ├── ethics_report_Babylon_Health_medical_20251023.pdf
-│ └── ethics_report_Vara_medical_20251023_vol1.pdf
+├── reports/                            # 자동 생성된 리포트 결과
+│   ├── pdf/                            # PDF 형태의 출력물
+│   ├── ethics_report_Babylon_Health_medical_20251023.pdf
+│   └── ethics_report_Vara_medical_20251023_vol1.pdf
 │
-├── notebooks/
-│ ├── embedding.ipynb # 임베딩 및 RAG 검증 실험
-│ └── check_output.ipynb # 리포트 출력 점검 노트북
+├── notebooks/                          # 실험 및 점검용 노트북
+│   ├── embedding.ipynb                 # 임베딩 및 RAG 검증 실험
+│   └── check_output.ipynb              # 리포트 출력 점검 노트북
 │
-├── ethics_pipeline_graph.py # 전체 LangGraph 파이프라인 구조 정의
-├── state_schema.py # LangGraph State 정의 (신뢰성·출처 추적 포함)
-├── .env # API 키 및 환경 변수
-├── README.md # 프로젝트 개요 및 실행 가이드
-└── requirements.txt # 의존 패키지 목록
+├── ethics_pipeline_graph.py            # 전체 LangGraph 파이프라인 구조 정의
+├── state_schema.py                     # LangGraph State 정의 (신뢰성·출처 추적 포함)
+├── .env                                # API 키 및 환경 변수
+├── README.md                           # 프로젝트 개요 및 실행 가이드
+└── requirements.txt                    # 의존 패키지 목록
