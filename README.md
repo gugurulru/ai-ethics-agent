@@ -169,3 +169,54 @@
 
 향후 **기업 내부 데이터 연동**과 **EU AI Act 세부 지표 반영**이 이루어진다면,  
 본 에이전트는 **윤리 리스크 사전 진단 및 개선 가이드 제공 도구**로서 실질적 활용 가치를 갖출 것으로 기대된다.
+
+
+
+
+
+
+23-RiskJudgeAgent
+ ┣ agents
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ ethics_criteria_generator.cpython-311.pyc
+ ┃ ┃ ┣ ethics_evaluator.cpython-311.pyc
+ ┃ ┃ ┣ ethics_pipeline_graph.cpython-311.pyc
+ ┃ ┃ ┣ make_metrics.cpython-311.pyc
+ ┃ ┃ ┣ report_generator.cpython-311.pyc
+ ┃ ┃ ┣ specialized_collection.cpython-311.pyc
+ ┃ ┃ ┣ web_collection.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ ethics_criteria_generator.py
+ ┃ ┣ ethics_evaluator.py
+ ┃ ┣ report_generator.py
+ ┃ ┣ specialized_collection.py
+ ┃ ┣ web_collection.py
+ ┃ ┗ __init__.py
+ ┣ chroma
+ ┃ ┗ ethics
+ ┃ ┃ ┣ 6c9e90fa-97ad-4113-b231-d072bac69c9d
+ ┃ ┃ ┃ ┣ data_level0.bin
+ ┃ ┃ ┃ ┣ header.bin
+ ┃ ┃ ┃ ┣ length.bin
+ ┃ ┃ ┃ ┗ link_lists.bin
+ ┃ ┃ ┗ chroma.sqlite3
+ ┣ data
+ ┃ ┗ EU.pdf
+ ┣ reports
+ ┃ ┗ pdf
+ ┃ ┃ ┗ collection_report_completed_20251022_1449.pdf
+ ┣ __pycache__
+ ┃ ┣ ethics_pipeline_graph.cpython-311.pyc
+ ┃ ┣ SpecSearchAgent.cpython-311.pyc
+ ┃ ┗ state_schema.cpython-311.pyc
+ ┣ .env
+ ┣ check_output.ipynb
+ ┣ embedding.ipynb
+ ┣ ethics_pipeline_graph.py
+ ┣ ethics_report_Babylon Health_medical_20251023.pdf
+ ┣ ethics_report_Vara_medical_20251023.pdf
+ ┣ ethics_report_Vara_medical_20251023_vol1.pdf
+ ┣ ethics_report_Vara_medical_20251023_vol2.pdf
+ ┣ ethics_report_Vara_medical_20251023_vol3.pdf
+ ┣ ethics_report_Vara_medical_20251023_vol4.pdf
+ ┗ state_schema.py
