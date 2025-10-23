@@ -56,3 +56,66 @@
 | **Ethics Criteria Generator** | `ethics_criteria_generator.py` | 임베딩된 규제 문서(RAG 기반)를 참조해 **도메인별 평가지표 세트**를 생성합니다. |
 | **Ethics Evaluator Agent** | `ethics_evaluator.py` | 수집된 정보와 평가지표를 결합하여 **윤리적 리스크 점수**를 산출하고, 기준 조항을 명시합니다. |
 | **Report Generator** | `report_generator.py` | 평가 결과와 근거를 통합해 **Markdown/PDF 보고서**를 자동 생성합니다. |
+
+## 🧩 State Schema (요약 버전)
+
+| Key | Description |
+|------|--------------|
+| **run_id** | 실행 식별자 (UUID 기반) |
+| **company_name / domain** | 평가 대상 기업명과 산업 도메인 |
+| **current_stage** | 현재 진행 단계 (init → collection → evaluation → report) |
+
+---
+
+### 🗂️ Collection Phase
+| Key | Description |
+|------|--------------|
+| **web_collection** | 일반 웹 정보 수집 결과 (기사·보도자료 등) |
+| **specialized_collection** | 학술·규제 문서 등 특화 정보 수집 결과 |
+| **merged_documents** | 통합된 문서 리스트 |
+| **quality_score** | 수집 데이터의 다양성·신뢰성·최신성 점수 |
+
+---
+
+### 🔍 Analysis Phase
+| Key | Description |
+|------|--------------|
+| **analysis_result** | 서비스 구조·리스크·핵심 사실 등 분석 요약 |
+| **analysis_score** | 분석 신뢰도 및 근거 강도 점수 |
+| **is_analysis_sufficient** | 분석 데이터 충분 여부 |
+
+---
+
+### ⚖️ Ethics Evaluation
+| Key | Description |
+|------|--------------|
+| **ethics_evaluation_criteria** | RAG 기반으로 생성된 도메인별 평가지표 세트 |
+| **ethics_evaluation** | 투명성·데이터 거버넌스 등 항목별 평가 결과 |
+| **ethics_score** | 윤리 평가 종합 점수 및 신뢰도 |
+| **critical_issues** | 주요 리스크 및 권고사항 목록 |
+
+---
+
+### 🌍 Social & Trust
+| Key | Description |
+|------|--------------|
+| **social_analysis** | 언론/전문가/논란 데이터 기반 사회적 반응 분석 |
+| **social_score** | 사회적 신뢰도 종합 점수 |
+
+---
+
+### 🧾 Reporting
+| Key | Description |
+|------|--------------|
+| **final_scores** | 데이터 품질·분석 신뢰도·윤리·사회 신뢰의 총합 점수 |
+| **report_content** | 보고서 본문 (요약, 근거, 권고안, 한계 등) |
+| **report_path** | 생성된 PDF/MD 파일 경로 |
+
+---
+
+### 🧠 System Meta
+| Key | Description |
+|------|--------------|
+| **source_summary** | 전체 문서 출처 및 단계별 문서 ID 추적 |
+| **errors / warnings / limitations** | 실행 중 오류·경고·한계사항 로그 |
+| **execution_log** | 에이전트별 실행 이력 (시간, 처리 문서, 소요시간 등) |
