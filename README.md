@@ -112,8 +112,8 @@
 ### 🧾 프로젝트 아키텍처
 <img width="268" height="722" alt="image" src="https://github.com/user-attachments/assets/66cfc3ad-8449-4e7c-be18-62006e33c7e0" />
 
-
-### Directory Structure
+---
+### 📂 Directory Structure
 ```bash
 ├── agents/ # 핵심 에이전트 모듈
 │ ├── web_collection.py # 웹 전반의 정보 수집 에이전트
