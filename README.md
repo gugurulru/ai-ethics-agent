@@ -30,7 +30,7 @@
   에이전트가 **간접 추론 기반 매핑**을 수행하여 서비스의 **윤리적 점수(ethical score)** 를 산출한다.
 
 - **3️⃣ Self-Healing Evaluation Loop (LangGraph)**  
-  평가 자료가 부족하거나 신뢰도가 낮을 경우 **LangGraph 기반 루프 구조**로 자동 재수집-재평가를 수행한다.<br>  
+  평가 자료가 부족하거나 신뢰도가 낮을 경우 **LangGraph 기반 루프 구조**로 자동 재수집-재평가를 수행한다.<br>
   단, **무한 루프 방지를 위한 예외 제어 로직**이 내장되어 있다.
 
 - **4️⃣ Experimental Validation & Generalization**  
