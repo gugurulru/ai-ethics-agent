@@ -110,10 +110,8 @@
 ---
 
 ### 🧾 프로젝트 아키텍처
-<div align="center" style="zoom:0.4;">
-
 ```mermaid
-%%{init: {'themeVariables': {'fontSize': '12px'}}}%%
+%%{init: {'themeVariables': {'fontSize': '10px'}}}%%
 graph TD
     START([START]) --> WEB[🌐 Agent: Web Collection<br/>웹 정보 수집]
     WEB --> SPEC[🎓 Agent: Specialized Collection<br/>전문 자료 수집]
@@ -132,7 +130,7 @@ graph TD
     style EVAL fill:#fce4ec
     style CHECK fill:#fff9c4
     style REPORT fill:#e0f2f1
-</div>```
+```
 ---
 ### 📂 Directory Structure
 ```bash
