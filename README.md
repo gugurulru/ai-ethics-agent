@@ -37,7 +37,8 @@
   실험적으로 **의료 도메인 사례(VARa vs Babylon Health)** 를 비교하여 실제 윤리 준수도 평가의 효용성을 검증합니다.
   추가로 다른 도메인(헬스케어, GPT )에 적용해 **에이전트의 강건성·일반화 성능**을 검증합니다.
 
-  ## 🧰 Tech Stack
+---
+## 🧰 Tech Stack
 
 | Category   | Details                                  |
 |-------------|------------------------------------------|
@@ -46,6 +47,7 @@
 | **Retrieval** | ChromaDB |
 | **Embedding Model** | BGE-M3 |
 
+---
 
 ## 🤖 Agents
 
@@ -57,65 +59,60 @@
 | **Ethics Evaluator Agent** | `ethics_evaluator.py` | 수집된 정보와 평가지표를 결합하여 **윤리적 리스크 점수**를 산출하고, 기준 조항을 명시합니다. |
 | **Report Generator** | `report_generator.py` | 평가 결과와 근거를 통합해 **Markdown/PDF 보고서**를 자동 생성합니다. |
 
-## 🧩 State Schema 
+---
+
+## 🧩 State Schema (요약 버전)
 
 | Key | Description |
-|------|--------------|
-| **run_id** | 실행 식별자 (UUID 기반) |
+|------|-------------|
+| **run_id** | 실행 고유 ID (UUID 기반) |
 | **company_name / domain** | 평가 대상 기업명과 산업 도메인 |
-| **current_stage** | 현재 진행 단계 (init → collection → evaluation → report) |
+| **current_stage** | 현재 파이프라인 단계 (init / collection / evaluation / report 등) |
 
 ---
 
-### 🗂️ Collection Phase
+### 📥 데이터 수집 단계
 | Key | Description |
-|------|--------------|
-| **web_collection** | 일반 웹 정보 수집 결과 (기사·보도자료 등) |
-| **specialized_collection** | 학술·규제 문서 등 특화 정보 수집 결과 |
-| **merged_documents** | 통합된 문서 리스트 |
-| **quality_score** | 수집 데이터의 다양성·신뢰성·최신성 점수 |
+|------|-------------|
+| **web_collection** | 일반 웹 문서 수집 (보도자료, 기업 웹사이트, 미디어 기사 등) |
+| **specialized_collection** | 학술·규제·공공기관 등 전문 자료 수집 |
+| **merged_documents** | 두 수집 결과를 통합한 문서 리스트 |
+| **quality_score** | 수집 데이터의 다양성·신뢰성·최신성 평가 점수 |
+| **is_data_sufficient** | 수집 데이터가 평가에 충분한지 여부 |
 
 ---
 
-### 🔍 Analysis Phase
+### 🔍 분석 단계
 | Key | Description |
-|------|--------------|
-| **analysis_result** | 서비스 구조·리스크·핵심 사실 등 분석 요약 |
-| **analysis_score** | 분석 신뢰도 및 근거 강도 점수 |
-| **is_analysis_sufficient** | 분석 데이터 충분 여부 |
+|------|-------------|
+| **analysis_result** | 기업의 기술, 서비스 구조, 주요 리스크 등의 분석 결과 |
+| **analysis_score** | 분석 근거의 신뢰도, 교차검증 수준 등 점수화된 지표 |
+| **is_analysis_sufficient** | 분석 정보가 충분한지 여부 |
 
 ---
 
-### ⚖️ Ethics Evaluation
+### ⚖️ 윤리 평가 단계
 | Key | Description |
-|------|--------------|
-| **ethics_evaluation_criteria** | RAG 기반으로 생성된 도메인별 평가지표 세트 |
-| **ethics_evaluation** | 투명성·데이터 거버넌스 등 항목별 평가 결과 |
-| **ethics_score** | 윤리 평가 종합 점수 및 신뢰도 |
-| **critical_issues** | 주요 리스크 및 권고사항 목록 |
+|------|-------------|
+| **ethics_evaluation_criteria** | 도메인별 임베딩 문서 기반으로 생성된 평가지표 세트 |
+| **ethics_evaluation** | 투명성, 데이터 거버넌스, 책임성 등 항목별 평가 결과 |
+| **ethics_score** | 윤리 평가 총점 및 항목별 세부 점수 |
+| **critical_issues** | 주요 윤리 리스크 및 개선 권고사항 목록 |
 
 ---
 
-### 🌍 Social & Trust
+### 🧾 보고서 생성 단계
 | Key | Description |
-|------|--------------|
-| **social_analysis** | 언론/전문가/논란 데이터 기반 사회적 반응 분석 |
-| **social_score** | 사회적 신뢰도 종합 점수 |
+|------|-------------|
+| **final_scores** | 데이터 품질, 분석 신뢰도, 윤리 점수를 종합한 최종 점수 |
+| **report_content** | 요약, 근거, 권고안 등을 포함한 보고서 내용 |
+| **report_path** | 생성된 보고서 파일 경로 (Markdown / PDF) |
 
 ---
 
-### 🧾 Reporting
+### ⚙️ 시스템 관리 정보
 | Key | Description |
-|------|--------------|
-| **final_scores** | 데이터 품질·분석 신뢰도·윤리·사회 신뢰의 총합 점수 |
-| **report_content** | 보고서 본문 (요약, 근거, 권고안, 한계 등) |
-| **report_path** | 생성된 PDF/MD 파일 경로 |
-
----
-
-### 🧠 System Meta
-| Key | Description |
-|------|--------------|
-| **source_summary** | 전체 문서 출처 및 단계별 문서 ID 추적 |
-| **errors / warnings / limitations** | 실행 중 오류·경고·한계사항 로그 |
-| **execution_log** | 에이전트별 실행 이력 (시간, 처리 문서, 소요시간 등) |
+|------|-------------|
+| **source_summary** | 수집 및 평가에 사용된 문서 출처와 ID 추적 정보 |
+| **warnings / errors / limitations** | 경고, 오류, 한계 사항 로그 |
+| **execution_log** | 각 에이전트의 실행 이력 (단계, 처리 문서, 수행 시간 등) |
