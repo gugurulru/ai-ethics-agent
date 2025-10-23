@@ -110,7 +110,7 @@
 ---
 
 ### 프로젝트 아키텍처
-
+```bash
 ├── data/                  # PDF 문서
 ├── agents/                # 평가 기준별 Agent 모듈
 ├── prompts/               # 프롬프트 템플릿
